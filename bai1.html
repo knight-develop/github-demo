@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tongSChan(){
+            let number = Number(prompt("Nhập số phần tử của mảng"));
+            if(isNaN(number) == true){
+                alert("Chuối vừa nhập không phải số");
+                return false;
+            }
+            else if(number < 0){
+                alert("Bạn hãy nhập số dương");
+                return false;
+            }
+            let array = new Array(number);
+            let tong = 0;
+            for(let i = 0; i < array.length; i++){
+                array[i] = Number(prompt("nhập phần tử thứ "+i));
+            }
+            for(let i = 0; i < array.length; i++){
+                if(array[i]%2 == 0){
+                    tong+=array[i];
+                }
+            }
+            document.write("Tổng các số chắn là: "+tong);
+        }
+        tongSChan();
+    </script>
+</body>
+</html>

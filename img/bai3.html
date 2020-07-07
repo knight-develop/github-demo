@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        h3{
+            color: deepskyblue;
+            text-align: center;
+        }
+        input{
+            height: 20px;
+        }
+        #user{
+            margin-left: 81px;
+        }
+        #email{
+            margin-left: 73px;
+        }
+        #pass{
+            margin-left: 50px;
+        }
+        #year{
+            margin-left: 4px;
+        }
+        button{
+            margin-left: 150px;
+            background-color: deepskyblue;
+            width: 80px;
+            height: 30px;
+            border-radius: 10px;
+            outline:  none;
+        }
+        h4{
+            margin: 0px;
+            display: inline-block;
+        }
+        span{
+            margin-left: 120px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>ĐĂNG KÍ THÀNH VIÊN</h3>
+        <h4>User</h4> <input type="text" name="" id="user"><br>
+        <span id="us"></span><br>
+        <h4>Email</h4>  <input type="text" name="" id="email"><br>
+        <span id="em"></span><br>
+        <h4>Password</h4>  <input type="password" name="" id="pass"><br>
+        <span id="pa"></span><br>
+        <h4>Số năm làm việc</h4> <input type="text" name="" id="year"><br>
+        <span id="ye"></span><br>
+        <button onclick="kiemTra()">Gửi</button>
+    </div>
+    <script>
+        function kiemTra(){
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;
+            var email = document.getElementById('email').value;
+            var year = document.getElementById('year').value;
+            
+            if(user.length == 0){
+                document.getElementById('us').innerHTML = "Bạn chưa nhập username";
+                return false;
+            }
+            else{
+                document.getElementById('us').innerHTML = "";
+            }
+            if(email.length == 0){
+                document.getElementById('em').innerHTML = "Bạn chưa nhập email";
+                return false;
+            }
+            else{
+                document.getElementById('em').innerHTML = "";
+            }
+            if(pass.length == 0){
+                document.getElementById('pa').innerHTML = "Bạn chưa nhập password";
+                return false;
+            }
+            else{
+                document.getElementById('pa').innerHTML = "";
+            }
+            if(year.length == 0)
+            {
+                document.getElementById('ye').innerHTML = "Bạn chưa nhập năm";
+                return false;
+            }
+            else if(year < 0){
+                document.getElementById('ye').innerHTML = "Năm phải là số dương";
+                return false
+            }
+            else{
+                document.getElementById('ye').innerHTML = ""
+            }
+            alert("Đã gửi");
+            return true
+        }
+    </script>
+</body>
+</html>
